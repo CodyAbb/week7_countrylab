@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Country List</title>
+    <script type="text/javascript" src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>List of Countries</h1>
+      <ul>
+        <li v-for="country in countries">
+          <span>{{country.name}}</span>
+          <span>{{country.population}}</span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
