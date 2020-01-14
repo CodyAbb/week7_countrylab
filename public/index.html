@@ -9,15 +9,17 @@
     <div id="app">
       <h1>List of Countries</h1>
 
+      <form >
+        <select v-model="selectedCountry">
+          <option v-for="country in countries" value="country" v-bind:value="country">{{country.name}}</option>
+        </select>
+      </form>
 
-      <ul>
-        <li v-for="country in countries">
-          <span>{{country.name}}</span>
-          <p v-if="seen">{{country.population}}</p>
-          <p><button type="button" v-on:click="seen = !seen">Info</button></p>
+      <div v-if='selectedCountry'>
+        <span>Name: {{selectedCountry.name}}</span> <br>
+        <span>Population: {{selectedCountry.population}}</span>
 
-        </li>
-      </ul>
+      </div>
     </div>
   </body>
 </html>
