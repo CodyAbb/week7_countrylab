@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#app',
     data: {
       countryURL: null,
-      countries: []
+      countries: [],
+      seen: false
     },
     mounted() {
       this.fetchCountries();
@@ -15,10 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('https://restcountries.eu/rest/v2/all')
           .then(response => response.json())
           .then(data => this.countries = data)
-
-          // .then(data => this.country.name = data.name)
-      },
-
+      }
     }
   })
 });
